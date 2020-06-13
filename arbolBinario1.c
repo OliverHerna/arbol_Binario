@@ -9,6 +9,9 @@ typedef struct nodo_a {
 }ARBOL;
 
 int cuentaNodos(ARBOL *);
+int treeType(ARBOL *, int);
+int depth(int, ARBOL *, int);
+int leafs(int, ARBOL *, int);
 void muestraArbol(int,ARBOL *);
 void preOrden(ARBOL *);
 void enOrden(ARBOL *);
@@ -26,6 +29,41 @@ int cuentaNodos(ARBOL *p) {
 		return 0;
 	else
 		return (cuentaNodos(p->izq)+1+cuentaNodos(p->der));
+}
+
+//Tree Type
+int treeType(ARBOL *p, int n) {
+	return 0;
+}
+
+//Depth
+int depth(int type, ARBOL *p, int n){
+	switch (type) {
+	case 1:
+		return (log2(n + 1) - 1);
+		break;
+	case 2:
+		return 0;
+		break;
+	default:
+		return INT_MIN;
+		break;
+	}
+}
+
+//Leafs
+int leafs(int type, ARBOL *p, int n){
+	switch (type) {
+	case 1:
+		return pow(2, depth(type, p, n));
+		break;
+	case 2:
+		return ((n + 1) / 2);
+		break;
+	default:
+		return INT_MIN;
+		break;
+	}
 }
 
 //Breadth first order
