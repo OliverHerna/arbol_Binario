@@ -193,9 +193,8 @@ ARBOL *elimina(ARBOL *p,int dato) {
 	return(p);
 }
 
-int main(void) {
-	int n,i,dato,op;
-	int type = 0;
+void main() {
+	int n, i, dato, op, type = 0;
 	ARBOL *p = NULL;
 	while(1){
 		printf("\nOperaciones Básicas con un árbol Binario\n");
@@ -289,9 +288,11 @@ int main(void) {
 				}
 				break;
 			case 12:
-				return 0;
-     		break;
+				return;
+     			break;
+			default:
+				return;
+     			break;
       }
     }
-    return 0;
 }
